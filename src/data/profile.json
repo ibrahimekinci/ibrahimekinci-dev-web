@@ -1,0 +1,193 @@
+{
+  "personal": {
+    "name": "ibrahim Ekinci",
+    "title": "Software Developer",
+    "location": "Melbourne, Victoria, Australia",
+    "email": "ibrahimekinci36@gmail.com",
+    "linkedin": "www.linkedin.com/in/ibrahimekinci",
+    "github": "github.com/ibrahimekinci",
+    "website": "ibrahimekinci.dev",
+    "summary": "Mid-to-Senior Backend Engineer with 4+ years of experience designing, developing, and deploying scalable applications and distributed microservices. Deep expertise in backend architecture, relational/NoSQL databases, and API integrations. Leverages a strong foundation in C# and transitionary experience in Golang to build resilient, high-performance systems. Passionate about containerized deployments and writing clean, maintainable code in Agile environments.",
+    "languages": [
+      {
+        "language": "Turkish",
+        "proficiency": "Native or bilingual proficiency"
+      },
+      {
+        "language": "English",
+        "proficiency": "Professional working proficiency"
+      }
+    ]
+  },
+  "skills": {
+    "languages": ["Golang", "C#", "Java", "JavaScript", "T-SQL", "PL/SQL", "HTML", "CSS"],
+    "frameworks": [".NET Core", "ASP.NET MVC", "Microservices", "RESTful APIs", "Entity Framework", "SignalR", "Dapper", "LINQ", "ADO.NET"],
+    "devops": ["Docker", "CI/CD pipelines", "Git", "SonarQube", "TFS"],
+    "databases": ["PostgreSQL", "Microsoft SQL Server", "Oracle", "Cassandra", "Couchbase", "MySQL", "Firestore", "Database Design"],
+    "tools": ["Apache Kafka", "WebSockets", "Agile", "OOP"]
+  },
+  "experience": [
+    {
+      "id": "trendyol",
+      "company": "Trendyol Group",
+      "title": "Software Developer",
+      "location": "Remote - Istanbul, Turkey",
+      "startDate": "April 2022",
+      "endDate": "September 2022",
+      "duration": "6 Months",
+      "description": [
+        "Maintained existing programs, developed applications tailored to new requirements, and rectified errors within Turkey's largest e-commerce company.",
+        "Engineered and deployed scalable backend modules utilizing Golang and Java within a highly distributed microservices architecture focused on order management.",
+        "Optimized large-scale data operations and query performance across PostgreSQL, Cassandra, and Couchbase clusters.",
+        "Collaborated with cross-functional Agile squads using Jira, employing pair programming and comprehensive testing (TDD, DDD) to ensure zero-downtime deployments."
+      ]
+    },
+    {
+      "id": "next4biz",
+      "company": "next4biz (EMEA)",
+      "title": "Software Developer",
+      "location": "Hybrid - Kadikoy, Istanbul, Turkey",
+      "startDate": "January 2021",
+      "endDate": "April 2022",
+      "duration": "1 Year 4 Months",
+      "description": [
+        "Architected and maintained core backend services for an enterprise CRM platform utilizing .NET Core and SignalR.",
+        "Containerized application environments using Docker to streamline local development and ensure parity across deployment pipelines.",
+        "Integrated third-party WhatsApp messaging APIs to unify real-time communication protocols, significantly improving platform data flow and database performance through PostgreSQL."
+      ]
+    },
+    {
+      "id": "karebilgi-fullstack",
+      "company": "Kare Bilgi Teknolojileri",
+      "title": "Full Stack Developer",
+      "location": "On-site - Istanbul, Turkey",
+      "startDate": "February 2018",
+      "endDate": "January 2021",
+      "duration": "3 Years",
+      "description": [
+        "Provided dedicated IT consultancy and systems engineering for the British Petroleum (BP) Turkey office, modernizing internal business operations.",
+        "Built the 'CAB Online' customer history and change management system using .NET MVC and Oracle, streamlining data retrieval times.",
+        "Developed a digital discount card processing platform automating requests, approvals, and activations utilizing .NET MVC, Web Forms, MSSQL, and Oracle.",
+        "Participated in the project to renovate the payment infrastructure of Halil Pekdemir Ciftligi's Vehicle Management System (TYM)."
+      ]
+    },
+    {
+      "id": "karebilgi-intern",
+      "company": "Kare Bilgi Teknolojileri",
+      "title": "Computer Engineer (Internship)",
+      "location": "Istanbul, Turkey",
+      "startDate": "January 2018",
+      "endDate": "February 2018",
+      "duration": "2 Months",
+      "description": [
+        "Completed internship focused on C# and T-SQL development."
+      ]
+    }
+  ],
+  "education": [
+    {
+      "id": "ait",
+      "institution": "Academy of Interactive Technology",
+      "degree": "Bachelor of Information Technology",
+      "location": "Melbourne, Australia",
+      "startDate": "February 2025",
+      "endDate": "April 2027",
+      "details": "Granted Recognition of Prior Learning (RPL) for Programming 1 unit."
+    },
+    {
+      "id": "sakarya",
+      "institution": "Sakarya University",
+      "degree": "Bachelor of Computer Engineering",
+      "location": "Sakarya, Turkey",
+      "startDate": "2015",
+      "endDate": "2018"
+    },
+    {
+      "id": "balikesir",
+      "institution": "Balikesir University",
+      "degree": "Associate Degree in Computer Programming",
+      "location": "Balikesir, Turkey",
+      "startDate": "September 2012",
+      "endDate": "September 2014"
+    }
+  ],
+  "certifications": [
+    {
+      "name": "Microsoft Software and Database Proficiency (696 hours)",
+      "issuer": "GFN Bahcesehir Wissen Akademie",
+      "date": "January 2015"
+    },
+    {
+      "name": "Volunteer Firefighter",
+      "issuer": "Ministry of Agriculture and Forestry (Turkey)",
+      "date": "April 2023",
+      "credentialId": "208632"
+    },
+    {
+      "name": "Amateur Radio Operator",
+      "issuer": "Directorate General of Coastal Safety",
+      "date": "March 2023",
+      "credentialId": "TA2IEQ"
+    },
+    {
+      "name": "Disaster Relief Volunteer",
+      "issuer": "Disaster and Emergency Management Authority (AFAD)",
+      "date": "November 2022",
+      "credentialId": "61269"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Unfollowers on Instagram",
+      "date": "Sep 2021 – Sep 2025",
+      "techStack": "JavaScript, HTML, Chrome Extension",
+      "description": "A privacy-focused, open-source Chrome extension that helps Instagram users identify who is not following them back. Operates entirely within the user's browser, eliminating the need for an API access or password.",
+      "link": "github.com/ibrahimekinci/chrome_extension_unfollowers_on_instagram"
+    },
+    {
+      "title": "File Type Detector",
+      "date": "Feb 2022 – Sep 2025",
+      "techStack": "C#, .NET, .NET Core, NuGet Package",
+      "description": "An open-source .NET library to accurately identify MIME types and file extensions via low-level binary signatures (magic bytes) and stream analysis.",
+      "link": "github.com/ibrahimekinci/dotnet-FileTypeDetector"
+    },
+    {
+      "title": "WhatsApp Integration (next4biz)",
+      "date": "Jul 2021 – Apr 2022",
+      "techStack": "RESTful API, ASP.NET, C#",
+      "description": "Integration work carried out to enable messaging functionality with WhatsApp within the Next4biz automation system."
+    },
+    {
+      "title": "Security Improvements (British Petrol)",
+      "date": "Oct 2020 – Nov 2020",
+      "techStack": "ASP.NET, T-SQL",
+      "description": "Implemented security enhancements for internal systems at British Petrol."
+    },
+    {
+      "title": "Discount Card Online (British Petrol)",
+      "date": "Apr 2019 – Jun 2019",
+      "techStack": "ASP.NET, T-SQL, Web Forms",
+      "description": "Digitalized the discount card processes (requests, approvals, activations) migrating previously paper-based features into a secure digital environment."
+    },
+    {
+      "title": "CAB Online (British Petrol)",
+      "date": "Nov 2018 – Mar 2019",
+      "techStack": "ASP.NET, T-SQL, Oracle",
+      "description": "Developed a customer history and change management system to track operations and implement approvals via a digital environment."
+    },
+    {
+      "title": "Payment Infrastructure Change (Halil Pekdemir Ciftligi)",
+      "date": "Jan 2018 – Mar 2018",
+      "techStack": "ASP.NET, T-SQL",
+      "description": "Integrated Asseco (Payten) for the payment infrastructure of the Vehicle Management System, enabling secure credit card storage and fast payment processing."
+    }
+  ],
+  "recommendations": [
+    {
+      "name": "Can Ozan Ataman",
+      "title": "React Native Developer",
+      "date": "September 1, 2019",
+      "text": "I had the opportunity to do group work in many software projects with Ibrahim Ekinci between 2015-2017. Ibrahim, who has signed successful works during our time working together, has extremely strong written and verbal communication skills. Capable of working both independently and with a team, Ibrahim stands out with his work discipline."
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    @apply bg-slate-950 text-slate-50 m-0 p-0;
+  }
+}
+
+@media print {
+  /* Ultra-compact A4 page settings to force single page */
+  @page {
+    margin: 0.5cm;
+    size: A4;
+  }
+  
+  html {
+    font-size: 11px !important;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    line-height: 1.2 !important;
+  }
+
+  main {
+    background: white !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    min-height: auto !important;
+  }
+
+  /* Force grid to stay active and structured */
+  .grid {
+    display: grid !important;
+    gap: 1rem !important;
+  }
+  
+  /* Reduce all paddings and margins */
+  .summary-section {
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .space-y-10 > * + * { margin-top: 0.5rem !important; }
+  .space-y-8 > * + * { margin-top: 0.5rem !important; }
+  .space-y-6 > * + * { margin-top: 0.5rem !important; }
+  .mb-16 { margin-bottom: 1rem !important; }
+  .mb-6 { margin-bottom: 0.5rem !important; }
+  .p-8, .p-6 { padding: 0.5rem !important; border: 1px solid #e2e8f0 !important; }
+
+  /* Ensure text colors are readable and small */
+  h1, h2, h3, p, span, li, time, a, div {
+    color: black !important;
+    text-shadow: none !important;
+    -webkit-text-fill-color: black !important;
+  }
+
+  h1 { font-size: 20pt !important; margin-bottom: 0.2rem !important; }
+  h2 { font-size: 12pt !important; margin-bottom: 0.5rem !important; border-bottom: 1px solid #ccc; padding-bottom: 2px;}
+  h3 { font-size: 10pt !important; margin-bottom: 0.1rem !important; }
+  p, span, li, a { font-size: 8.5pt !important; }
+  
+  /* Header text and summary */
+  .text-2xl { font-size: 11pt !important; }
+  .text-lg { font-size: 9pt !important; }
+  .leading-relaxed { line-height: 1.2 !important; }
+  
+  /* Keep projects in 2 columns */
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.5rem !important;
+  }
+
+  /* Project cards very compact */
+  article {
+    padding: 0.3rem !important;
+    margin-bottom: 0.3rem !important;
+  }
+  ul { margin-top: 0.2rem !important; }
+  li { padding-left: 0.5rem !important; }
+  
+  /* Turn off borders and extra visual flairs inside articles */
+  .border-l-2 { border-width: 1px !important; border-color: #ccc !important; }
+  .absolute.bg-purple-500 { display: none !important; } /* hide timeline dots to save space */
+  
+  /* Hide UI */
+  .print\:hidden {
+    display: none !important;
+  }
+}
