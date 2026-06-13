@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#c084fc" />
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" rx="120" fill="url(#bgGrad)" />
+  <g transform="translate(256, 256) scale(0.85, 1.4)">
+    <text x="0" y="75" font-family="'Fira Code', 'JetBrains Mono', 'Courier New', monospace" font-weight="900" font-size="240" fill="url(#textGrad)" text-anchor="middle" letter-spacing="-8"><tspan baseline-shift="20">{</tspan>IE<tspan baseline-shift="20">}</tspan></text>
+  </g>
+</svg>
