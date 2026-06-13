@@ -10,15 +10,28 @@ function extractYear(dateStr) {
   return match ? parseInt(match[0], 10) : 0;
 }
 
-const CloudCard = ({ children, alignLeft, title, typeColor = "from-blue-300 to-purple-400" }) => {
+const CloudCard = ({ children, alignLeft, title, zIndex, shapeVariant, typeColor = "from-blue-300 to-purple-400" }) => {
+  const shapeClass = `random-shape-${shapeVariant}`;
+  const auroraClass = `animate-aurora-${shapeVariant % 3}`;
+
   return (
-    <div className={`intro-element absolute w-full px-6 md:px-24 flex opacity-0 ${alignLeft ? 'justify-start' : 'justify-end'}`}>
-      <div className="w-full md:w-5/12 lg:w-4/12 bg-white/5 backdrop-blur-2xl border border-white/10 p-6 md:p-8 rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative overflow-hidden">
-        <div className="absolute top-[-50px] right-[-50px] w-32 h-32 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <h3 className={`text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${typeColor} mb-4`}>
+    <div 
+      className={`intro-element absolute w-full px-6 md:px-24 flex opacity-0 ${alignLeft ? 'justify-start' : 'justify-end'} items-center will-change-transform transform-gpu`}
+      style={{ zIndex: zIndex, position: 'absolute' }}
+    >
+      {/* Intense Smooth Neon Light behind the card (Aurora effect) */}
+      <div className={`absolute ${alignLeft ? 'left-[15%]' : 'right-[15%]'} w-72 h-72 rounded-full mix-blend-screen filter blur-[80px] opacity-40 will-change-transform transform-gpu ${auroraClass}`}></div>
+      
+      {/* The Glass Card */}
+      <div className={`animate-float w-full md:w-5/12 lg:w-4/12 bg-white/10 backdrop-blur-xl border border-white/20 p-8 drop-shadow-2xl relative transition-all duration-500 hover:bg-white/15 isolate will-change-transform transform-gpu ${shapeClass}`} style={{ WebkitBackdropFilter: 'blur(24px)' }}>
+        
+        {/* Soft internal glares */}
+        <div className="absolute top-0 right-0 w-32 h-32 bg-white/20 rounded-full blur-3xl pointer-events-none -z-10"></div>
+
+        <h3 className={`text-xl md:text-2xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r ${typeColor} mb-4 relative z-10`}>
           {title}
         </h3>
-        <div className="text-slate-300 space-y-4">
+        <div className="text-slate-200 space-y-4 relative z-10">
           {children}
         </div>
       </div>
@@ -170,12 +183,13 @@ const IntroScene = ({ profile, onComplete }) => {
           const alignLeft = !isProject;
 
           let typeColor = "from-blue-300 to-purple-400";
-          if (item.type === 'Experience') typeColor = "from-purple-400 to-pink-400";
-          if (item.type === 'Project') typeColor = "from-teal-300 to-emerald-400";
+          let lightColor = "bg-blue-500";
+          if (item.type === 'Experience') { typeColor = "from-purple-400 to-pink-400"; lightColor = "bg-purple-500"; }
+          if (item.type === 'Project') { typeColor = "from-teal-300 to-emerald-400"; lightColor = "bg-emerald-500"; }
 
           return (
-            <CloudCard key={`item-${idx}`} alignLeft={alignLeft} title={item.type} typeColor={typeColor}>
-               <div className="mb-2">
+            <CloudCard key={`item-${idx}`} alignLeft={alignLeft} title={item.type} typeColor={typeColor} lightColor={lightColor} zIndex={idx + 10} shapeVariant={idx % 4}>
+               <div className="mb-2 relative z-10">
                   <p className="text-lg text-white font-medium">{item.title || item.degree}</p>
                   <p className="text-purple-300 text-sm mb-2">{item.company || item.institution || item.techStack}</p>
                   {item.dateStr && <p className="text-slate-400 text-xs mt-1 flex items-center gap-1"><Calendar size={12}/> {item.dateStr}</p>}

@@ -6,6 +6,47 @@
   }
 }
 
+@layer utilities {
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  /* Highly exaggerated asymmetrical organic shapes for cards */
+  .random-shape-0 { border-radius: 140px 30px 120px 40px / 50px 150px 40px 130px; }
+  .random-shape-1 { border-radius: 40px 150px 50px 130px / 140px 40px 120px 50px; }
+  .random-shape-2 { border-radius: 160px 40px 150px 20px / 60px 140px 30px 160px; }
+  .random-shape-3 { border-radius: 50px 180px 30px 160px / 150px 30px 140px 40px; }
+
+  /* Smooth random light transitions (Aurora effect) */
+  .animate-aurora-0 { animation: aurora-0 14s ease-in-out infinite; }
+  .animate-aurora-1 { animation: aurora-1 16s ease-in-out infinite; }
+  .animate-aurora-2 { animation: aurora-2 18s ease-in-out infinite; }
+}
+
+@keyframes aurora-0 {
+  0%, 100% { background-color: #3b82f6; transform: translate(0, 0) scale(1); }
+  33% { background-color: #6366f1; transform: translate(20px, -20px) scale(1.1); }
+  66% { background-color: #8b5cf6; transform: translate(-10px, 15px) scale(0.9); }
+}
+
+@keyframes aurora-1 {
+  0%, 100% { background-color: #10b981; transform: translate(0, 0) scale(1); }
+  33% { background-color: #14b8a6; transform: translate(-20px, 15px) scale(1.1); }
+  66% { background-color: #0ea5e9; transform: translate(15px, -20px) scale(0.9); }
+}
+
+@keyframes aurora-2 {
+  0%, 100% { background-color: #c084fc; transform: translate(0, 0) scale(1); }
+  33% { background-color: #f472b6; transform: translate(15px, 20px) scale(1.15); }
+  66% { background-color: #e879f9; transform: translate(-20px, -15px) scale(0.85); }
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0px); }
+}
+
 @media print {
   /* Ultra-compact A4 page settings to force single page */
   @page {
