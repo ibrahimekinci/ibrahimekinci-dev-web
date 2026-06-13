@@ -8,7 +8,7 @@ import {
   Briefcase, TerminalSquare, ExternalLink, Calendar, MapPin
 } from 'lucide-react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
-
+import PdfResume from './PdfResume';
 gsap.registerPlugin(ScrollTrigger);
 
 const SummaryView = ({ profile, onRestart }) => {
@@ -53,7 +53,9 @@ const SummaryView = ({ profile, onRestart }) => {
   }, { scope: containerRef });
 
   return (
-    <main ref={containerRef} className="w-full max-w-7xl mx-auto px-6 py-24 min-h-screen bg-[#020617] text-slate-200">
+    <>
+      <div className="print:hidden">
+        <main ref={containerRef} className="w-full max-w-7xl mx-auto px-6 py-24 min-h-screen bg-[#020617] text-slate-200">
       
       {/* Action Buttons */}
       <div className="fixed top-6 left-6 z-50 summary-section print:hidden flex items-center gap-4">
@@ -290,7 +292,10 @@ const SummaryView = ({ profile, onRestart }) => {
           <ArrowUp size={24} />
         </button>
       )}
-    </main>
+        </main>
+      </div>
+      <PdfResume profile={profile} />
+    </>
   );
 };
 
