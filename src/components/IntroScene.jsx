@@ -4,10 +4,26 @@ import { useGSAP } from '@gsap/react';
 import { Calendar, MapPin } from 'lucide-react';
 import Character from './Character';
 
-function extractYear(dateStr) {
-  if (!dateStr) return 0;
-  const match = dateStr.match(/\d{4}/);
-  return match ? parseInt(match[0], 10) : 0;
+const currentYear = new Date().getFullYear();
+
+function getEndYear(dateStr) {
+  if (!dateStr || String(dateStr).toLowerCase().includes('present')) return currentYear;
+  const matches = String(dateStr).match(/\d{4}/g);
+  if (matches) {
+    const year = parseInt(matches[matches.length - 1], 10);
+    return year > currentYear ? currentYear : year;
+  }
+  return currentYear;
+}
+
+function getDisplayEndDate(dateStr) {
+  if (!dateStr || String(dateStr).toLowerCase().includes('present')) return 'Present';
+  return dateStr;
+}
+
+function getDisplayProjectDate(dateStr) {
+  if (!dateStr) return 'Present';
+  return dateStr;
 }
 
 const CloudCard = ({ children, alignLeft, title, zIndex, shapeVariant, typeColor = "from-blue-300 to-purple-400" }) => {
@@ -57,20 +73,20 @@ const IntroScene = ({ profile, onComplete }) => {
     ...profile.experience.map(exp => ({ 
       ...exp, 
       type: 'Experience', 
-      year: extractYear(exp.startDate),
-      dateStr: `${exp.startDate} – ${exp.endDate} | ${exp.duration}`
+      year: getEndYear(exp.endDate),
+      dateStr: `${exp.startDate} – ${getDisplayEndDate(exp.endDate)}${exp.duration ? ` | ${exp.duration}` : ''}`
     })),
     ...profile.education.map(edu => ({ 
       ...edu, 
       type: 'Education', 
-      year: extractYear(edu.startDate),
-      dateStr: `${edu.startDate} – ${edu.endDate}`
+      year: getEndYear(edu.endDate),
+      dateStr: `${edu.startDate} – ${getDisplayEndDate(edu.endDate)}`
     })),
     ...profile.projects.map(proj => ({ 
       ...proj, 
       type: 'Project', 
-      year: extractYear(proj.date),
-      dateStr: proj.date
+      year: getEndYear(proj.date),
+      dateStr: getDisplayProjectDate(proj.date)
     }))
   ];
 
