@@ -58,10 +58,10 @@ const SummaryView = ({ profile, onRestart }) => {
         <main ref={containerRef} className="w-full max-w-7xl mx-auto px-6 py-24 min-h-screen bg-[#020617] text-slate-200">
       
       {/* Action Buttons */}
-      <div className="fixed top-6 left-6 z-50 summary-section print:hidden flex items-center gap-4">
+      <div className="fixed top-6 left-1/2 -translate-x-1/2 z-50 summary-section print:hidden flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full px-4 justify-center pointer-events-auto">
         <button 
           onClick={onRestart}
-          className="px-6 py-2 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 backdrop-blur-md rounded-full text-sm font-medium transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-500"
+          className="px-4 py-2 sm:px-6 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 backdrop-blur-md rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-500 whitespace-nowrap"
           aria-label="Restart Scrollytelling Animation"
         >
           <RefreshCw size={16} />
@@ -69,7 +69,7 @@ const SummaryView = ({ profile, onRestart }) => {
         </button>
         <button 
           onClick={() => window.print()}
-          className="px-6 py-2 bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 text-teal-300 backdrop-blur-md rounded-full text-sm font-medium transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal-500"
+          className="px-4 py-2 sm:px-6 bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 text-teal-300 backdrop-blur-md rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal-500 whitespace-nowrap"
           aria-label="Print or Save as PDF"
         >
           <Printer size={16} />
@@ -79,12 +79,12 @@ const SummaryView = ({ profile, onRestart }) => {
 
       {/* Header Section */}
       <header className="summary-section text-center mb-16">
-        <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-4">
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-500 mb-4">
           {profile.personal.name}
         </h1>
-        <p className="text-2xl text-slate-400 font-medium">{profile.personal.title}</p>
+        <p className="text-xl sm:text-2xl text-slate-400 font-medium">{profile.personal.title}</p>
         
-        <nav className="mt-6 flex justify-center gap-8 text-sm text-blue-300" aria-label="Social Links">
+        <nav className="mt-6 flex flex-wrap justify-center gap-4 sm:gap-8 text-sm text-blue-300" aria-label="Social Links">
           <a href={`https://${profile.personal.linkedin}`} className="flex items-center gap-2 hover:text-white transition" target="_blank" rel="noopener noreferrer">
             <FaLinkedin size={18} /> LinkedIn
           </a>

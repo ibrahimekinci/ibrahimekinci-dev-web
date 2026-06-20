@@ -1,8 +1,9 @@
 import React, { useRef, useEffect } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
-import { Calendar, MapPin } from 'lucide-react';
+import { Calendar, MapPin, Printer, FastForward } from 'lucide-react';
 import Character from './Character';
+import PdfResume from './PdfResume';
 
 const currentYear = new Date().getFullYear();
 
@@ -180,9 +181,29 @@ const IntroScene = ({ profile, onComplete }) => {
   }, { scope: containerRef });
 
   return (
-    <div ref={containerRef} className="fixed inset-0 w-full h-screen bg-[#020617] overflow-hidden flex items-center justify-center">
-      
-      <div className="bg-nebula absolute inset-0 pointer-events-none opacity-40">
+    <>
+      <div ref={containerRef} className="fixed inset-0 w-full h-screen bg-[#020617] overflow-hidden flex items-center justify-center print:hidden">
+        
+        <div className="absolute top-6 left-1/2 -translate-x-1/2 z-50 print:hidden flex flex-col sm:flex-row items-center gap-2 sm:gap-4 w-full px-4 justify-center pointer-events-auto">
+          <button 
+            onClick={onComplete}
+            className="px-4 py-2 sm:px-6 bg-purple-500/10 hover:bg-purple-500/20 border border-purple-500/30 text-purple-300 backdrop-blur-md rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-purple-500 whitespace-nowrap"
+            aria-label="Skip to Summary"
+          >
+            <FastForward size={16} />
+            Skip to Summary
+          </button>
+          <button 
+            onClick={() => window.print()}
+            className="px-4 py-2 sm:px-6 bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 text-teal-300 backdrop-blur-md rounded-full text-xs sm:text-sm font-medium transition-all flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-teal-500 whitespace-nowrap"
+            aria-label="Print or Save as PDF"
+          >
+            <Printer size={16} />
+            Save as PDF
+          </button>
+        </div>
+
+        <div className="bg-nebula absolute inset-0 pointer-events-none opacity-40">
         <div className="absolute top-[-10%] left-[10%] w-[500px] h-[500px] bg-blue-900/30 rounded-full blur-[120px]"></div>
         <div className="absolute top-[40%] right-[10%] w-[600px] h-[600px] bg-purple-900/20 rounded-full blur-[150px]"></div>
       </div>
@@ -224,7 +245,9 @@ const IntroScene = ({ profile, onComplete }) => {
         Scroll or press any key to skip
       </div>
 
-    </div>
+      </div>
+      <PdfResume profile={profile} />
+    </>
   );
 };
 
